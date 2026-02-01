@@ -1,0 +1,44 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--inputs);
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.container {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center; 
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--main);
+}
+
+.nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 32px;
+}
+
+.link {
+  color: var(--main);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.active {
+  color: var(--button);
+}

@@ -1,0 +1,135 @@
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .filtersTitle{
+    font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+color: var(--text);
+  }
+  
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+ 
+  .section h4 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .filterGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  
+  .filterButton svg {
+    color: var(--main);
+  }
+  
+  .filterButton.active svg {
+    color: var(--button);
+  }
+  
+  
+  .filterButton {
+    height: 72px;
+    
+    border-radius: 12px;
+    border: 1px solid var(--gray-light);
+    background: var(--white);
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    gap: 6px;
+    cursor: pointer;
+  }
+  
+  .active {
+    border-color: var(--button);
+  }
+  
+  .searchButton {
+    height: 56px;
+    width: 160px;
+    border-radius: 200px;
+    background: var(--button);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    margin-top: 40px;
+  }
+
+  .label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--main);
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--gray);
+  }
+  
+  .input {
+    height: 56px;
+    padding: 0 16px;
+  
+    border-radius: 10px;
+    border: 1px solid var(--gray-light);
+  
+    background: var(--inputs);
+    font-size: 16px;
+    color: var(--main);
+  
+    outline: none;
+  }
+  
+  .input::placeholder {
+    color: var(--gray);
+  }
+  
+  .input:focus {
+    border-color: var(--button);
+  }
+
+  .filterButton {
+    height: 72px;
+    border-radius: 12px;
+    border: 1px solid var(--gray-light);
+    background: var(--white);
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  
+    cursor: pointer;
+  }
+  
+  .filterButton svg {
+    color: var(--main);
+  }
+  
+  .filterButton.active {
+    border-color: var(--button);
+  }
+  
+  .filterButton.active svg {
+    color: var(--button);
+  }
+  

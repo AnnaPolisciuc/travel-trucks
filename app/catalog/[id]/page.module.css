@@ -1,0 +1,95 @@
+.details {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 0 80px;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .details h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #101828;
+  }
+  
+  .meta {
+    display: flex;
+    gap: 16px;
+  
+    font-size: 14px;
+    color: #475467;
+  }
+  
+  .price {
+    font-size: 24px;
+    font-weight: 600;
+    color: #101828;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  
+  .gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .description {
+    max-width: 800px;
+  
+    font-size: 16px;
+    line-height: 1.5;
+    color: #475467;
+  }
+  
+
+  .tabs {
+    display: flex;
+    gap: 32px;
+  
+    border-bottom: 1px solid #eaecf0;
+  }
+  
+  .tabs button {
+    background: none;
+    border: none;
+    padding: 12px 0;
+  
+    font-size: 16px;
+    font-weight: 500;
+    color: #475467;
+    cursor: pointer;
+  }
+  
+  .tabs .active {
+    color: #101828;
+    position: relative;
+  }
+  
+  .tabs .active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+  
+    width: 100%;
+    height: 2px;
+    background: #e44848;
+  }
+  
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 40px;
+  
+    margin-top: 32px;
+  }
+  
+  

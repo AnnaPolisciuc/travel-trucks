@@ -1,0 +1,36 @@
+.catalog {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 48px 64px;
+  
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 64px;
+  }
+  
+  .filters {
+    position: sticky;
+    top: 96px;
+    align-self: start;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .loadMore {
+    align-self: center;
+    margin-top: 32px;
+  
+    height: 44px;
+    padding: 0 32px;
+  
+    border-radius: 200px;
+    border: 1px solid var(--gray-light);
+    background: var(--white);
+  
+    cursor: pointer;
+  }
+  
