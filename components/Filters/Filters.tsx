@@ -22,6 +22,7 @@ export default function Filters() {
 
   return (
     <aside className={css.filters}>
+       <div className={css.filtersContent}>
     {/* LOCATION */}
     <div className={css.section}>
       <label className={css.label}>
@@ -82,6 +83,7 @@ export default function Filters() {
           </button>
         ))}
       </div>
+    </div>
     </div>
   
     {/* SEARCH */}

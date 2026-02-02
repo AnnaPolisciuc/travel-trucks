@@ -1,9 +1,14 @@
-.filters {
+
+  .filters {
     display: flex;
     flex-direction: column;
     gap: 12px;
+  
+    position: sticky;
+    top: 96px;
+  
+    max-height: calc(100vh - 96px);
   }
-
   .filtersTitle{
     font-family: var(--font-family);
 font-weight: 500;
@@ -37,10 +42,19 @@ color: var(--text);
     color: var(--button);
   }
   
+  .filtersContent {
+    flex: 1;
+    overflow-y: auto;
   
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  
+    padding-right: 4px;
+  }
+
   .filterButton {
     height: 72px;
-    
     border-radius: 12px;
     border: 1px solid var(--gray-light);
     background: var(--white);
@@ -73,6 +87,7 @@ color: var(--text);
     color: var(--white);
     border: none;
     cursor: pointer;
+    align-self: flex-start;
   }
   .searchButton:hover,
   .searchButton:active,
