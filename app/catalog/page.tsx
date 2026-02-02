@@ -1,6 +1,6 @@
 'use client';
 import { useCampersStore } from '@/store/campers.store';
-import { useFiltersStore } from '@/store/filters.store';
+// import { useFiltersStore } from '@/store/filters.store';
 import Filters from '@/components/Filters/Filters';
 import CamperCard from '@/components/CamperCard/CamperCard';
 import css from './page.module.css';
@@ -13,7 +13,7 @@ export default function CatalogPage() {
       resetAndFetch();
     }, []);
 
-  const { location, vehicleType, equipment } = useFiltersStore();
+  // const { location, vehicleType, equipment } = useFiltersStore();
   
 
   return (

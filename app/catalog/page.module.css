@@ -24,13 +24,22 @@
     align-self: center;
     margin-top: 32px;
   
-    height: 44px;
-    padding: 0 32px;
-  
-    border-radius: 200px;
     border: 1px solid var(--gray-light);
-    background: var(--white);
-  
+    border-radius: 200px;
+    padding: 16px 32px;
+    width: 145px;
+    height: 56px;
     cursor: pointer;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: var(--main);
   }
   
+  .loadMore:hover,
+  .loadMore:active,
+  .loadMore:focus {
+    border: 1px solid var(--button-hover);
+  }
