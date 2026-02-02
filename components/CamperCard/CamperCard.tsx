@@ -2,8 +2,7 @@ import { Camper } from '@/types/camper';
 import { useRouter } from 'next/navigation';
 import { useFavoritesStore } from '@/store/favorites.store';
 import css from './CamperCard.module.css';
-
-
+import { FEATURES } from '@/config/features.config';
 
 interface CamperCardProps {
   camper: Camper;
@@ -20,11 +19,11 @@ export default function CamperCard({ camper }: CamperCardProps) {
 
   return (
     <article className={css.card}>
-    <img
-      src={camper.gallery[0].thumb}
-      alt={camper.name}
-      className={css.image}
-    />
+<img
+  src={camper.gallery[0].thumb}
+  alt={camper.name}
+  className={css.image}
+/>
 
     <div className={css.content}>
       {/* HEADER */}
@@ -56,13 +55,26 @@ export default function CamperCard({ camper }: CamperCardProps) {
 
       <p className={css.description}>{camper.description}</p>
 
+
+      <ul className={css.list}>
+        {FEATURES.filter((item) => item.show(camper)).map(
+          ({ key, label, icon }) => (
+            <li key={key} className={css.item}>
+              <svg className={css.icon} width="20" height="20">
+                <use href={`/icons/sprite.svg#${icon}`} />
+              </svg>
+              <span>{label}</span>
+            </li>
+          )
+        )}
+      </ul>
       {/* FEATURES */}
-      <ul className={css.features}>
+      {/* <ul className={css.features}>
         <li>Automatic</li>
         <li>Petrol</li>
         <li>Kitchen</li>
         <li>AC</li>
-      </ul>
+      </ul> */}
 
      <button
   className={css.button}
