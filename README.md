@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+ TravelTrucks
 
-## Getting Started
+TravelTrucks is a web application for browsing, filtering, and booking camper vans.  
+The project allows users to explore available campers, apply filters, view detailed information, and save favorite vehicles.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+ Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Camper catalog with pagination
+- Filtering campers by:
+  - Location
+  - Vehicle type (single selection)
+  - Equipment (multiple selection: AC, kitchen, radio, etc.)
+- Camper details page with:
+  - Image gallery
+  - Vehicle specifications
+  - Features list
+  - Reviews
+- Add/remove campers to favorites
+- Favorites are saved after page reload
+- Backend-based filtering (API query parameters)
+- Responsive and semantic layout
+- Loader during async requests
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Technologies Used
 
-## Learn More
+- **Next.js (App Router)**
+- **TypeScript**
+- **Zustand** — state management
+- **Axios** — HTTP requests
+- **CSS Modules**
+- **MockAPI** — backend simulation
+- **Vercel** — deployment
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `app/` — application pages and routing
+- `components/` — reusable UI components
+- `store/` — Zustand stores
+- `services/` — API requests
+- `config/` — configuration data (filters, features)
+- `types/` — TypeScript types
 
-## Deploy on Vercel
+Author
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Anna Polisciuc
+Frontend Developer
+GitHub: https://github.com/AnnaPolisciuc
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Email: annap00775@gmail.com
