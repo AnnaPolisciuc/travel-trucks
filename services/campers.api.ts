@@ -1,11 +1,14 @@
 import axios from 'axios';
-import { CampersResponse, Camper } from '@/types/camper';
+import { Camper } from '@/types/camper';
 
 const API_URL = 'https://66b1f8e71ca8ad33d4f5f63e.mockapi.io';
 
 export const getCampers = async ({
-  equipment,
-  ...rest
+  page = 1,
+  limit = 8,
+  location,
+  form,
+  equipment = [],
 }: {
   page?: number;
   limit?: number;
@@ -13,18 +16,19 @@ export const getCampers = async ({
   form?: string;
   equipment?: string[];
 }) => {
-  const params: Record<string, unknown> = { ...rest };
+  const params: Record<string, string | number | boolean> = {
+    page,
+    limit,
+  };
 
-  if (equipment && equipment.length > 0) {
-    equipment.forEach((item) => {
-      params[item] = true;
-    });
-  }
+  if (location) params.location = location;
+  if (form) params.form = form;
 
-  const response = await axios.get<CampersResponse>(`${API_URL}/campers`, {
-    params,
+  equipment.forEach((item) => {
+    params[item] = true;
   });
 
+  const response = await axios.get(`${API_URL}/campers`, { params });
   return response.data.items;
 };
 

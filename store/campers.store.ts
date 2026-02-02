@@ -12,6 +12,7 @@ interface CampersState {
 
   fetchCampers: (reset?: boolean) => Promise<void>;
   loadMore: () => void;
+  resetAndFetch: () => Promise<void>;
 }
 
 export const useCampersStore = create<CampersState>((set, get) => ({
@@ -24,33 +25,42 @@ export const useCampersStore = create<CampersState>((set, get) => ({
   fetchCampers: async (reset = false) => {
     try {
       set({ loading: true, error: null });
-  
+
       const { location, vehicleType, equipment } =
         useFiltersStore.getState();
-  
-      const currentPage = reset ? 1 : get().page;
-  
+
+      const page = reset ? 1 : get().page;
+
       const data = await getCampers({
-        page: currentPage,
+        page,
         limit: 8,
-        location,
-        form: vehicleType,
+        location: location || undefined,
+        form: vehicleType || undefined,
         equipment,
       });
-  
-      set((state) => ({
-        campers: reset ? data : [...state.campers, ...data],
-        page: currentPage + 1,
+
+      set({
+        campers: reset ? data : [...get().campers, ...data],
+        page: page + 1,
         hasMore: data.length === 8,
         loading: false,
-      }));
+      });
     } catch {
       set({ loading: false, error: 'Failed to load campers' });
     }
   },
-  
 
   loadMore: () => {
     get().fetchCampers();
+  },
+
+  resetAndFetch: async () => {
+    set({
+      campers: [],
+      page: 1,
+      hasMore: true,
+    });
+
+    await get().fetchCampers(true);
   },
 }));

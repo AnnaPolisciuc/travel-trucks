@@ -1,21 +1,20 @@
 'use client';
-
-import { useEffect } from 'react';
 import { useCampersStore } from '@/store/campers.store';
 import { useFiltersStore } from '@/store/filters.store';
 import Filters from '@/components/Filters/Filters';
 import CamperCard from '@/components/CamperCard/CamperCard';
 import css from './page.module.css';
+import { useEffect } from 'react';
 
 export default function CatalogPage() {
-  const { campers, loading, hasMore, fetchCampers, loadMore } =
+  const { campers, loading, hasMore, loadMore, resetAndFetch } =
     useCampersStore();
+    useEffect(() => {
+      resetAndFetch();
+    }, []);
 
   const { location, vehicleType, equipment } = useFiltersStore();
-
-  useEffect(() => {
-    fetchCampers(true);
-  }, [fetchCampers, location, vehicleType, equipment]);
+  
 
   return (
     <main className={css.catalog}>

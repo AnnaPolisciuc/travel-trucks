@@ -5,6 +5,7 @@ import { useFiltersStore } from '@/store/filters.store';
 import css from './Filters.module.css';
 import { EQUIPMENT_FILTERS } from '@/config/filters.config';
 import { VEHICLE_TYPES } from '@/config/filters.config';
+import { useCampersStore } from '@/store/campers.store';
 
 export default function Filters() {
   const {
@@ -17,7 +18,7 @@ export default function Filters() {
   } = useFiltersStore();
 
   const [localLocation, setLocalLocation] = useState(location);
-
+  const { resetAndFetch } = useCampersStore();
 
   return (
     <aside className={css.filters}>
@@ -85,11 +86,14 @@ export default function Filters() {
   
     {/* SEARCH */}
     <button
-      className={css.searchButton}
-      onClick={() => setLocation(localLocation)}
-    >
-      Search
-    </button>
+  className={css.searchButton}
+  onClick={() => {
+    setLocation(localLocation);
+    resetAndFetch();
+  }}
+>
+  Search
+</button>
   </aside>
   );
 }
