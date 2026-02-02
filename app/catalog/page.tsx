@@ -27,9 +27,14 @@ export default function CatalogPage() {
           <CamperCard key={camper.id} camper={camper} />
         ))}
 
+{!loading && campers.length === 0 && (
+    <p className={css.empty}>
+      No campers found for selected filters
+    </p>
+  )}
         {loading && <p>Loading...</p>}
 
-        {!loading && hasMore && (
+        {!loading && hasMore && campers.length > 0 && (
           <button
             onClick={loadMore}
             className={css.loadMore}

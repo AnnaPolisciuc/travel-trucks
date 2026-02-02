@@ -58,7 +58,6 @@ export const useCampersStore = create<CampersState>((set, get) => ({
     set({
       campers: [],
       page: 1,
-      hasMore: true,
     });
 
     await get().fetchCampers(true);
