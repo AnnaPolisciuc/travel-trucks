@@ -1,25 +1,26 @@
 .features {
-
     border-radius: 10px;
-padding: 44px 80px;
-background: var(--inputs);
+    padding: 44px 52px;
+    background: var(--inputs);
+  max-width: 631px;
   }
   
   .list {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-bottom: 100px;
+    padding-left: 0;
   }
   
   .item {
     display: flex;
     align-items: center;
-    gap: 8px;
-  
+    gap: 8px;  
     padding: 8px 12px;
     border-radius: 100px;
     background: var(--badges);
-mix-blend-mode: multiply;
+    mix-blend-mode: multiply;
     font-size: 14px;
     font-weight: 500;
     color: #101828;
@@ -36,15 +37,18 @@ mix-blend-mode: multiply;
   }
   
   .title {
-    font-size: 20px;
-    font-weight: 600;
     margin-bottom: 24px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color: var(--main);
   }
   
   .grid {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
   }
   
   .row {
@@ -53,3 +57,9 @@ mix-blend-mode: multiply;
     font-size: 16px;
   }
   
+  .divider {
+    height: 1px;
+background-color: var(--gray-light);
+width: 100%;
+margin-bottom: 24px;
+  }

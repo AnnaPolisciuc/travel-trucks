@@ -24,6 +24,7 @@ export default function Features({ camper }: Props) {
         )}
       </ul>
       <h3 className={css.title}>Vehicle details</h3>
+      <div className={css.divider} />
 
       <div className={css.grid}>
         {VEHICLE_DETAILS.map(({ label, value }) => (

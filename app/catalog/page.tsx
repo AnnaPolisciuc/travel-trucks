@@ -5,6 +5,7 @@ import Filters from '@/components/Filters/Filters';
 import CamperCard from '@/components/CamperCard/CamperCard';
 import css from './page.module.css';
 import { useEffect } from 'react';
+import Loader from '@/components/Loader/Loader';
 
 export default function CatalogPage() {
   const { campers, loading, hasMore, loadMore, resetAndFetch } =
@@ -32,7 +33,7 @@ export default function CatalogPage() {
       No campers found for selected filters
     </p>
   )}
-        {loading && <p>Loading...</p>}
+       {loading && <Loader />}
 
         {!loading && hasMore && campers.length > 0 && (
           <button
