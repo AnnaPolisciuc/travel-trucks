@@ -1,18 +1,19 @@
 .details {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 24px 0 80px;
-  
+    /* padding: 24px 0 80px; */
     display: flex;
     flex-direction: column;
-    gap: 24px;
   }
-  
-  .details h1 {
-    font-size: 24px;
-    font-weight: 600;
-    color: #101828;
-  }
+
+.name {
+margin-bottom: 8px;
+font-family: var(--font-family);
+font-weight: 600;
+font-size: 24px;
+line-height: 133%;
+color: var(--main);
+}
   
   .meta {
     display: flex;

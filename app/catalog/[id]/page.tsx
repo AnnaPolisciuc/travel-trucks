@@ -9,6 +9,7 @@ import css from './page.module.css';
 import BookingForm from '@/components/BookingForm/BookingForm';
 import Features from '@/components/Features/Features';
 import Reviews from '@/components/Reviews/Reviews';
+import Loader from '@/components/Loader/Loader';
 
 export default function CamperDetailsPage() {
   const { id } = useParams<{ id: string }>();
@@ -19,7 +20,7 @@ export default function CamperDetailsPage() {
     getCamperById(id).then(setCamper);
   }, [id]);
 
-  if (!camper) return <p>Loading...</p>;
+  if (!camper) return <Loader/>
 
   return (
     <main className={css.details}>
@@ -38,7 +39,7 @@ export default function CamperDetailsPage() {
   {camper.gallery.map((img, i) => (
     <img
       key={i}
-      src={img.original} // или img.thumb
+      src={img.original} 
       alt={camper.name}
     />
   ))}
